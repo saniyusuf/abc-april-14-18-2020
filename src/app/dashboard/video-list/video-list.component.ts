@@ -7,12 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VideoListComponent implements OnInit {
   videoList: Video[] = VIDEO_STATIC_DATA;
+  highlightedVideo;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  setHighlightedVideo(videoData: Video) {
+    this.highlightedVideo = videoData;
+  }
 }
 
 export interface Video {
