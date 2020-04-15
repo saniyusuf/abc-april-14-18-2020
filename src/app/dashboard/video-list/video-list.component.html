@@ -4,6 +4,6 @@
     (click)="setHighlightedVideo(videoData)"
     *ngFor="let videoData of videoList"
   >
-    {{ videoData.author }} - {{ videoData.title }}
+    <app-video-thumbnail [video]="videoData"></app-video-thumbnail>
   </li>
 </ul>
