@@ -1,20 +1,21 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-video-list',
   templateUrl: './video-list.component.html',
-  styleUrls: ['./video-list.component.css']
+  styleUrls: ['./video-list.component.css'],
 })
 export class VideoListComponent implements OnInit {
   @Input() videoList: Video[];
   highlightedVideo;
+  @Output() onVideoSelected = new EventEmitter<Video>();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   setHighlightedVideo(videoData: Video) {
+    this.onVideoSelected.emit(videoData);
     this.highlightedVideo = videoData;
   }
 }
@@ -31,4 +32,3 @@ interface ViewDetail {
   region: string;
   date: string;
 }
-

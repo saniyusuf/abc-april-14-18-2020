@@ -8,12 +8,16 @@ import {Video} from '../video-list/video-list.component';
 })
 export class VideoDashboardComponent implements OnInit {
   dataForVideoList: Video[] = VIDEO_STATIC_DATA;
+  selectedVideo: Video;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  videoSelected(video: Video) {
+    this.selectedVideo = video;
+  }
 }
 
 const VIDEO_STATIC_DATA = [
